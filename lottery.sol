@@ -11,12 +11,8 @@ contract Lottery{
     }
 
     receive() external payable { 
-        require(msg.value==1 ether);
+        require(msg.value==0.001 ether);
         participants.push(payable(msg.sender));
-    }
-
-    function one() public pure returns(uint){
-        return uint(1);
     }
 
     function getwinner() public returns(address payable){
